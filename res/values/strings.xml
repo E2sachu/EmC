@@ -14,11 +14,35 @@
     <string name="choix_fruit">Jus ou fruit :</string>
     <string name="choix_cereal">Type de Céréales :</string>
     <string name="next">Suivant</string>
+    <string name="total">Calories Total :</string>
+    
     <string-array name="array_lait">
         <item >-- Vide --</item>
         <item >Fromage</item>
         <item >Lait cru</item>
         <item >Chocolat chaud</item>
     </string-array>
+    
+    <string-array name="array_fruit">
+        <item >-- Vide --</item>
+        <item >Jus d\'orange</item>
+        <item >Banane</item>
+        <item >Raisin</item>
+    </string-array>
+    
+    <string-array name="array_cereal">
+        <item >-- Vide --</item>
+        <item >pain aux chocolat</item>
+        <item >Biscuit</item>
+        <item >Flocon d\'avoine</item>
+    </string-array>
+    
+    <string-array name="array_calories">
+        <item >0</item>
+        <item >10</item>
+        <item >20</item>
+        <item >30</item>
+    </string-array>
+    
 
 </resources>
