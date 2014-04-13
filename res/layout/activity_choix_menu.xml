@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.essachu.emc.ChoixMenu"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/breakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/choix_breakfast" />
+
+    <TextView
+        android:id="@+id/cereal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/breakfast"
+        android:layout_below="@+id/breakfast"
+        android:layout_marginTop="25dp"
+        android:text="@string/choix_cereal" />
+
+    <TextView
+        android:id="@+id/lait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cereal"
+        android:layout_below="@+id/spinner_cereal"
+        android:text="@string/choix_lait" />
+
+    <Spinner
+        android:id="@+id/spinner_cereal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cereal" />
+
+    <Spinner
+        android:id="@+id/spinner_lait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lait"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lait"
+        android:layout_below="@+id/spinner_lait"
+        android:layout_marginTop="25dp"
+        android:text="@string/choix_fruit" />
+
+    <Spinner
+        android:id="@+id/spinner_fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fruit"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_fruit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/next"/>
+
+</RelativeLayout>
+

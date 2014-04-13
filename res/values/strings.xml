@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eats My Calories</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_choice">Choisissez un menu</string>
+    <string name="menu_alea">Choix aléatoire d\'un menu</string>
+    <string name="title_activity_choix_menu">ChoixMenu</string>
+    <string name="title_activity_choix_alea">ChoixAlea</string>
+    <string name="choix_viande">Viande/Poisson</string>
+    <string name="choix_breakfast">Element de votre petit déjeuner :</string>
+    <string name="choix_lait">Produit laitier :</string>
+    <string name="choix_fruit">Jus ou fruit :</string>
+    <string name="choix_cereal">Type de Céréales :</string>
+    <string name="next">Suivant</string>
+    <string-array name="array_lait">
+        <item >-- Vide --</item>
+        <item >Fromage</item>
+        <item >Lait cru</item>
+        <item >Chocolat chaud</item>
+    </string-array>
+
+</resources>
