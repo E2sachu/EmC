@@ -37,12 +37,12 @@
         <item >Flocon d\'avoine</item>
     </string-array>
     
-    <string-array name="array_calories">
+    <integer-array name="array_calories">
         <item >0</item>
         <item >10</item>
         <item >20</item>
         <item >30</item>
-    </string-array>
+    </integer-array>
     
 
 </resources>

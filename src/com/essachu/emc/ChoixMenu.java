@@ -17,7 +17,7 @@ public class ChoixMenu extends Activity implements OnItemClickListener,
 		OnItemSelectedListener {
 
 	Spinner spin_lait, spin_fruit, spin_cereal;
-	String array_calorie[];
+	int array_calorie[];
 	TextView totalCalories;
 
 	@Override
@@ -31,7 +31,7 @@ public class ChoixMenu extends Activity implements OnItemClickListener,
 
 		// On met le string-array calorie dans un tableau pour récupé l'item en
 		// fonction de la position du spinner
-		array_calorie = getResources().getStringArray(R.array.array_calories);
+		array_calorie = getResources().getIntArray(R.array.array_calories);
 		Log.i("array_calorie", "" + array_calorie[1]);
 
 		totalCalories = (TextView) findViewById(R.id.textView2);
@@ -97,16 +97,23 @@ public class ChoixMenu extends Activity implements OnItemClickListener,
 
 		// on récupère la valeur numérique du spinner
 		int cereal_pos = spin_cereal.getSelectedItemPosition();
-		Log.i("position du spinner", "" + cereal_pos);
+		int fruit_pos = spin_fruit.getSelectedItemPosition();
+		int lait_pos = spin_lait.getSelectedItemPosition();
+//		Log.i("Posion du spin_cereal", "" + cereal_pos);
 
-		String calorie_int = array_calorie[cereal_pos];
-		Log.i("Valeur Calorie", "" + calorie_int);
+		int calorie_cereal = array_calorie[cereal_pos];
+		int calorie_fruit = array_calorie[lait_pos];
+		int calorie_lait= array_calorie[fruit_pos];
+//		Log.i("Valeur Calorie", "" + calorie_cereal);
+		
+		//Addition des calorie au total
+		int totalK = calorie_cereal+calorie_fruit+calorie_lait;
 		
 		// 
-		if (cereal_pos <= 1) {
-			totalCalories.setText(array_calorie[cereal_pos] + " Calorie");
+		if (totalK <= 1) {
+			totalCalories.setText(totalK + " Calorie");
 		} else {
-			totalCalories.setText(array_calorie[cereal_pos] + " Calories");
+			totalCalories.setText(totalK + " Calories");
 		}
 
 	}
