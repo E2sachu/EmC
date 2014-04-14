@@ -11,36 +11,57 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-public class ChoixMenu extends Activity implements OnItemClickListener, OnItemSelectedListener {
-	
-	Spinner spin_lait,spin_fruit,spin_cereal;
+public class ChoixMenu extends Activity implements OnItemClickListener,
+		OnItemSelectedListener {
+
+	Spinner spin_lait, spin_fruit, spin_cereal;
+	String array_calorie[];
+	TextView totalCalories;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choix_menu);
-		
-		spin_lait = (Spinner)findViewById(R.id.spinner_lait);
-		spin_fruit =(Spinner)findViewById(R.id.spinner_fruit);
-		spin_cereal = (Spinner)findViewById(R.id.spinner_cereal);
-		
-		ArrayAdapter<CharSequence> adapter_lait = ArrayAdapter.createFromResource(this, R.array.array_lait, android.R.layout.simple_spinner_item);
-		adapter_lait.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		spin_lait = (Spinner) findViewById(R.id.spinner_lait);
+		spin_fruit = (Spinner) findViewById(R.id.spinner_fruit);
+		spin_cereal = (Spinner) findViewById(R.id.spinner_cereal);
+
+		// On met le string-array calorie dans un tableau pour récupé l'item en
+		// fonction de la position du spinner
+		array_calorie = getResources().getStringArray(R.array.array_calories);
+		Log.i("array_calorie", "" + array_calorie[1]);
+
+		totalCalories = (TextView) findViewById(R.id.textView2);
+
+		// Mise en place des spinners
+
+		ArrayAdapter<CharSequence> adapter_lait = ArrayAdapter
+				.createFromResource(this, R.array.array_lait,
+						android.R.layout.simple_spinner_item);
+		adapter_lait
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spin_lait.setAdapter(adapter_lait);
-		
-		ArrayAdapter<CharSequence> adapter_fruit = ArrayAdapter.createFromResource(this, R.array.array_fruit, android.R.layout.simple_spinner_item);
-		adapter_lait.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		ArrayAdapter<CharSequence> adapter_fruit = ArrayAdapter
+				.createFromResource(this, R.array.array_fruit,
+						android.R.layout.simple_spinner_item);
+		adapter_lait
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spin_fruit.setAdapter(adapter_fruit);
-		
-		ArrayAdapter<CharSequence> adapter_cereal = ArrayAdapter.createFromResource(this, R.array.array_cereal, android.R.layout.simple_spinner_item);
-		adapter_lait.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		ArrayAdapter<CharSequence> adapter_cereal = ArrayAdapter
+				.createFromResource(this, R.array.array_cereal,
+						android.R.layout.simple_spinner_item);
+		adapter_lait
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spin_cereal.setAdapter(adapter_cereal);
-		
+
 		spin_lait.setOnItemSelectedListener(this);
 		spin_fruit.setOnItemSelectedListener(this);
 		spin_cereal.setOnItemSelectedListener(this);
-		
 
 	}
 
@@ -67,24 +88,33 @@ public class ChoixMenu extends Activity implements OnItemClickListener, OnItemSe
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
+
+		// on récupère la valeur numérique du spinner
+		int cereal_pos = spin_cereal.getSelectedItemPosition();
+		Log.i("position du spinner", "" + cereal_pos);
+
+		String calorie_int = array_calorie[cereal_pos];
+		Log.i("Valeur Calorie", "" + calorie_int);
 		
-		//on récupère la valeur numérique du spinner
-		int cereal_int = spin_cereal.getSelectedItemPosition();
-		Log.i("spin_cereal",""+cereal_int);
-		
+		// 
+		if (cereal_pos <= 1) {
+			totalCalories.setText(array_calorie[cereal_pos] + " Calorie");
+		} else {
+			totalCalories.setText(array_calorie[cereal_pos] + " Calories");
+		}
+
 	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 }
